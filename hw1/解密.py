@@ -93,7 +93,8 @@ def vernam(ciphertxt, key):
     ciphertxt = ciphertxt.replace(" ", "").upper()
     if len(key) < len(ciphertxt):
         autokey = key + ciphertxt[0:len(ciphertxt)-len(key)]
-
+    else :
+        autokey = key
     output = ""
     for i in range(0, len(ciphertxt)):
         # xor 
