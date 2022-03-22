@@ -51,8 +51,8 @@ def playfair(ciphertxt, key):
         #前一個字母和後一個字母
         preindex = keytable.index(ciphertxt[pre])
         postindex = keytable.index(ciphertxt[pre+1])
-        preRow, preCol = int(preIndex/5), preIndex % 5
-        postRow, postCol = int(postIndex/5), postIndex % 5
+        preRow, preCol = int(preindex/5), preindex % 5
+        postRow, postCol = int(postindex/5), postindex % 5
 
         # 橫列相同往左移
         if postRow == preRow:
