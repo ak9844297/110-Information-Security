@@ -186,7 +186,7 @@ def row(ciphertxt, key):
             moreNum = 0
         splitTxt[sort_key[i]] = ciphertxt[splitCount:splitCount+chrNum+moreNum]
         splitCount = splitCount + chrNum+moreNum
-    print(splitTxt)
+    #print(splitTxt)
 
     output = ''
  
