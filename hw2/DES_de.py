@@ -105,7 +105,7 @@ bit_shift =[1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1]
 
 class op:
  def pc1_shift(key):
-    return [key[k+1]for k in PC1_l],[key[k-1] for k in PC1_r]
+    return [key[k-1]for k in PC1_l],[key[k-1] for k in PC1_r]
  def pc2_shift(key):
     return [key[k-1]for k in PC2]
  def E_shift(key):
@@ -139,6 +139,7 @@ def ItoB(interger,n):
         interger=interger//2
     return tmp
 def HtoB(input):
+
     tmp=format(int(input[2:],16),'064b')
     output=[int(i)for i in tmp]
    # print(output)
@@ -173,14 +174,15 @@ def des_de(text,key):
         rig=cycle(lef,rig,sub_key[i])
         lef=tmp
 
-    return BtoI(op.FP_shift(rig+lef))
+    return BtoI(op.FP_shift(lef+rig))
 
 
 iindex = sys.argv[1:].index('-i')
 kindex = sys.argv[1:].index('-k')
-text= ''.join(sys.argv[iindex+1:kindex])
-key=''.join(sys.argv[kindex+1:])
-out= hex(des_de(text,key))
+text= ''.join(sys.argv[iindex+2:kindex+1])
+key=''.join(sys.argv[kindex+2:])
+#text =input('rext:')
+#key=input('key:')
 output=des_de(text,key)
 output=hex(output)
 tmp=str(output)
