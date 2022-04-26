@@ -174,7 +174,7 @@ def des_de(text,key):
         rig=cycle(lef,rig,sub_key[i])
         lef=tmp
 
-    return BtoI(op.FP_shift(lef+rig))
+    return BtoI(op.FP_shift(rig+lef))
 
 
 iindex = sys.argv[1:].index('-i')
