@@ -119,7 +119,7 @@ def encrypt(plain_text,n,public_key):
 def decrypt(cipher_text,n,private_key):
     cipher_num = int(base64.b64decode(cipher_text).decode('ascii'))
     plain_num = square_multiply(cipher_num,private_key,n)
-    print(plain_num)
+    #print(plain_num)
     plain_text = num_to_str(plain_num)
     return plain_text
 
@@ -134,7 +134,7 @@ def CRT_dec(cipher_text,p,q,d):
     m2 = square_multiply(cipher_num,dq,q)
     h = q_inv * (m1-m2) % p
     result = m2 + h * q
-    print(result)
+    #print(result)
     plain_text = num_to_str(result)
     return plain_text
 
